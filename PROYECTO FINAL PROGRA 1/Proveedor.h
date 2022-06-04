@@ -63,9 +63,8 @@ public:
 			q_estado = mysql_query(cn.getConectar(), c);
 			if (!q_estado) {
 				resultado = mysql_store_result(cn.getConectar());
-				cout << "id| PROVEEDOR | nit | DIRECCION | TELEFONO" << endl;
 				while (fila = mysql_fetch_row(resultado)) {
-					cout << fila[0] <<" | "<< fila[1] << " |" << fila[2] << "|" << fila[3] << "| " << fila[4]  << endl;
+					cout <<endl<< fila[0] <<" | "<< fila[1] << " |" << fila[2] << "|" << fila[3] << "| " << fila[4]  << endl;
 				}
 			}
 			else {
@@ -89,7 +88,7 @@ public:
 				resultado = mysql_store_result(cn.getConectar());
 				cout << "id| PROVEEDOR | nit | DIRECCION | TELEFONO" << endl;
 				while (fila = mysql_fetch_row(resultado)) {
-					cout << fila[0] << " | " << fila[1] << " |" << fila[2] << "|" << fila[3] << "| " << fila[4] << endl;
+					cout<<endl << fila[0] << " | " << fila[1] << " |" << fila[2] << "|" << fila[3] << "| " << fila[4] << endl;
 				}
 			}
 			else {
@@ -157,7 +156,6 @@ public:
 			q_estado = mysql_query(cn.getConectar(), c);
 			if (!q_estado) {
 				resultado = mysql_store_result(cn.getConectar());
-				cout << "id| PROVEEDOR | nit | DIRECCION | TELEFONO" << endl;
 				while (fila = mysql_fetch_row(resultado)) {
 					f++;
 				}

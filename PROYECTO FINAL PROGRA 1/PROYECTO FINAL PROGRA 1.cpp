@@ -73,10 +73,15 @@ void ventas();
 void compras();
 
 
+
+
+
 int main()
 {
     menu();
 }
+
+
 void gotoxy(int x, int y) {
     HANDLE hcon = GetStdHandle(STD_OUTPUT_HANDLE);
     COORD dwPos;
@@ -111,7 +116,7 @@ void menu() {
         }
         gotoxy(24, 26); cout << "          MENU DE OPCIONES         " << endl;
         gotoxy(20, 27); cout << "===========================================";
-        gotoxy(22, 29); cout << "1. ACCEDER A LOS PUESTOS" << endl;
+        gotoxy(22, 29); cout << "1. ACCEDER A LOS PUESTOS" <<"Dato borroar: "<< endl;
         gotoxy(22, 30); cout << "2. ACCEDER A LOS EMPLEADOS" << endl;
         gotoxy(22, 31); cout << "3. ACCEDER A LOS CLIENTES" << endl;
         gotoxy(22, 32); cout << "4. ACCEDER A LOS PROVEEDORES" << endl;
@@ -161,6 +166,7 @@ void puestos() {
     int opc = 0;
     Puesto p = Puesto();
     do {
+
         system("cls");
         cout << "       \n\t\t TABLA DE REGISTRO DE PUESTOS       " << endl;
         cout << "\t===========================================" << endl;
@@ -1781,6 +1787,42 @@ void eliminarProducto() {
         cout << "NO EXISTE ESTE ID EN LA BASE DE DATOS" << endl;
     }
 }
+int n_compra() {
+        string consulta = "select no_orden_compra from compras order by no_orden_compra desc limit 1;";
+        int q_estado;
+        string dato = "";
+        ConexionBD cn = ConexionBD();
+        MYSQL_ROW fila;
+        MYSQL_RES* resultado;
+        cn.abrir_conexion();
+        if (cn.getConectar()) {
+            const char* c = consulta.c_str();
+            q_estado = mysql_query(cn.getConectar(), c);
+            if (!q_estado) {
+                resultado = mysql_store_result(cn.getConectar());
+                int numero = 0;
+                while (fila = mysql_fetch_row(resultado)) {
+                    numero = atoi((fila[0])) + 1;
+                }
+
+                return numero;
+                system("pause");
+                /*while (fila = mysql_fetch_row(resultado)) {
+                cout << "ID: " << fila[0] << "    FACTURA NO: " << fila[1] << " SERIE: " << fila[2] << "                FECHA: " << fila[3] << endl;
+                cout << "CLIENTE: " << fila[4] << " NIT: " << fila[5] << endl;
+                cout << "ATIENDE: " << fila[6] << " - " << fila[7] << endl;
+                }*/
+            }
+            else {
+                cout << "ERROR AL BUSCAR LA INFORMACION";
+            }
+        }
+        else {
+            cout << "ERROR AL CONECTAR CON LA BASE DE DATOS";
+        }
+        cn.cerrar_conexion();
+    return 1;
+};
 
 void ingresarCompra() {
     Compra c = Compra();
@@ -1792,9 +1834,10 @@ void ingresarCompra() {
     float precio_costo;
     bool existe;
     cout << "INGRESE LOS DATOS QUE SE LE SOLICITA " << endl;
-    cout << "INGRESE EL NUMERO DE ORDEN DE COMPRA ";
+    no_or_c = n_compra();
+    cout << "NUMERO DE COMPRA #"<<no_or_c<<endl;
     cin.ignore();
-    cin >> no_or_c;
+    
     cout << "INGRESE EL ID DEL PROVEEDOR DE LOS PROVEEDORES SIGUIENTES" << endl;
     p.mostrar();
     cin >> idproveedor;
@@ -2069,34 +2112,38 @@ void ModificarProveedor() {
         cin >> respuesta;
         cin.ignore();
         if ((respuesta == 's') || (respuesta == 'S')) {
-            cout << "DESEA MODIFICAR EL NOMBRE DEL PROVEEDOR " << endl;
-            cin >> respuesta;
-            if ((respuesta == 's') || (respuesta == 'S')) {
+            //cout << "DESEA MODIFICAR EL NOMBRE DEL PROVEEDOR " << endl;
+            //cin >> respuesta;
+            //if ((respuesta == 's') || (respuesta == 'S')) {
                 cout << "INGRESE EL NUEVO NOMBRE DEL PROVEEDOR " << endl;
-                cin.ignore();
+                
                 getline(cin, prov);
-            }
-            cout << "DESEA MODIFICAR EL NIT DEL PROVEEDOR" << endl;
-            cin >> respuesta;
-            if ((respuesta == 's') || (respuesta == 'S')) {
+                cin.ignore();
+                //}
+            //cout << "DESEA MODIFICAR EL NIT DEL PROVEEDOR" << endl;
+            //cin >> respuesta;
+            //if ((respuesta == 's') || (respuesta == 'S')) {
                 cout << "INGRESE EL NUEVO NIT DEL PROVEEDOR " << endl;
-                cin.ignore();
+               
                 getline(cin, nit);
-            }
-            cout << "DESEA MODIFICAR LA DIRECCION" << endl;
-            cin >> respuesta;
-            if ((respuesta == 's') || (respuesta == 'S')) {
+                cin.ignore();
+                //}
+            //cout << "DESEA MODIFICAR LA DIRECCION" << endl;
+            //cin >> respuesta;
+            //if ((respuesta == 's') || (respuesta == 'S')) {
                 cout << "INGRESE LA NUEVA DIRECCION DEL PROVEEDOR " << endl;
-                cin.ignore();
+               
                 getline(cin, dir);
-            }
-            cout << "DESEA MODIFICAR EL TELEFONO" << endl;
-            cin >> respuesta;
-            if ((respuesta == 's') || (respuesta == 'S')) {
-                cout << "INGRESE EL NUEVO TELEFONO DEL PROVEEDOR " << endl;
                 cin.ignore();
+                //}
+            //cout << "DESEA MODIFICAR EL TELEFONO" << endl;
+            //cin >> respuesta;
+            //if ((respuesta == 's') || (respuesta == 'S')) {
+                cout << "INGRESE EL NUEVO TELEFONO DEL PROVEEDOR " << endl;
+                
                 cin >> tel;
-            }
+                cin.ignore();
+                //}
         }
         else
         {

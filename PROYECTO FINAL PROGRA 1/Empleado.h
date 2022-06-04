@@ -74,13 +74,14 @@ public:
 		MYSQL_RES* resultado;
 		cn.abrir_conexion();
 		if (cn.getConectar()) {
-			string consulta = "select e.idEmpleado,e.nombres,e.apellidos,e.direccion,e.telefono,e.DPI,e.genero,e.fecha_nacimento,p.puesto,e.fecha_inicio_labores,e.fechaingreso from empleados as e inner join puestos as p on e.idPuesto = p.id_puesto; ";
+			string consulta = "select e.idEmpleado,e.nombres,e.apellidos,e.direccion,e.telefono,e.DPI,e.genero,e.fecha_nacimento,p.puesto,e.fecha_inicio_labores,e.fechaingreso from empleados as e inner join puestos as p on e.idPuesto = p.id_puesto ORDER BY idEmpleado; ";
 			const char* c = consulta.c_str();
 			q_estado = mysql_query(cn.getConectar(), c);
 			if (!q_estado) {
 				resultado = mysql_store_result(cn.getConectar());
-				cout << "id | nombres | apellidos | direccion | telefono | dpi | genero | fecha nacimiento | puesto | inicio de labores | fecha de ingreso" << endl;
+				cout << "id | nombres \t| apellidos | direccion | telefono | dpi | genero | fecha nacimiento | puesto | inicio de labores | fecha de ingreso" << endl;
 				while (fila = mysql_fetch_row(resultado)) {
+					cout << endl;
 					cout << fila[0] << " | " << fila[1] << " | " << fila[2] << " | " << fila[3] << " | " << fila[4] << " | " << fila[5] << " | " << fila[6] << " | " << fila[7] << " | " << fila[8] << " | " << fila[9] << " | " << fila[10] << endl;
 				}
 			}
