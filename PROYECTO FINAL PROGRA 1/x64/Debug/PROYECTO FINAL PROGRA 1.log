@@ -1,0 +1,20 @@
+﻿  PROYECTO FINAL PROGRA 1.cpp
+C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\PROYECTO FINAL PROGRA 1\PROYECTO FINAL PROGRA 1.cpp(889,10): warning C4101: 'coso': variable local sin referencia
+C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\PROYECTO FINAL PROGRA 1\PROYECTO FINAL PROGRA 1.cpp(1087,47): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\PROYECTO FINAL PROGRA 1\PROYECTO FINAL PROGRA 1.cpp(1101,21): warning C4101: 'factura': variable local sin referencia
+C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\PROYECTO FINAL PROGRA 1\PROYECTO FINAL PROGRA 1.cpp(1102,22): warning C4101: 'serie': variable local sin referencia
+C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\PROYECTO FINAL PROGRA 1\PROYECTO FINAL PROGRA 1.cpp(1343,50): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\PROYECTO FINAL PROGRA 1\PROYECTO FINAL PROGRA 1.cpp(1373,46): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\PROYECTO FINAL PROGRA 1\PROYECTO FINAL PROGRA 1.cpp(1316,25): warning C4101: 'r': variable local sin referencia
+C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\PROYECTO FINAL PROGRA 1\PROYECTO FINAL PROGRA 1.cpp(1565,9): warning C4101: 'idm': variable local sin referencia
+C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\PROYECTO FINAL PROGRA 1\PROYECTO FINAL PROGRA 1.cpp(1738,10): warning C4101: 'existe': variable local sin referencia
+C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\PROYECTO FINAL PROGRA 1\PROYECTO FINAL PROGRA 1.cpp(1736,9): warning C4101: 'idcd': variable local sin referencia
+C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\PROYECTO FINAL PROGRA 1\PROYECTO FINAL PROGRA 1.cpp(1736,15): warning C4101: 'id_c': variable local sin referencia
+C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\PROYECTO FINAL PROGRA 1\PROYECTO FINAL PROGRA 1.cpp(1965,9): warning C4101: 'idproveedor': variable local sin referencia
+C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\PROYECTO FINAL PROGRA 1\PROYECTO FINAL PROGRA 1.cpp(966): warning C4715: 'n_venta': no todas las rutas de acceso de control devuelven un valor
+C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\PROYECTO FINAL PROGRA 1\Cliente.h(301): warning C4715: 'Cliente::asignardatos': no todas las rutas de acceso de control devuelven un valor
+C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\PROYECTO FINAL PROGRA 1\Venta.h(327): warning C4715: 'Venta::asignardatos': no todas las rutas de acceso de control devuelven un valor
+C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\PROYECTO FINAL PROGRA 1\Compra.h(185): warning C4715: 'Compra::ExisteCompra': no todas las rutas de acceso de control devuelven un valor
+C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\PROYECTO FINAL PROGRA 1\Compra_Detalle.h(183): warning C4715: 'Compra_Detalle::ExisteComp_det': no todas las rutas de acceso de control devuelven un valor
+C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\PROYECTO FINAL PROGRA 1\Producto.h(379): warning C4715: 'Producto::returnPV': no todas las rutas de acceso de control devuelven un valor
+  PROYECTO FINAL PROGRA 1.vcxproj -> C:\Users\diete\Music\final\PROYECTO_FINAL_SQL-main\x64\Debug\PROYECTO FINAL PROGRA 1.exe
