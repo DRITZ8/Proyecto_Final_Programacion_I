@@ -77,22 +77,53 @@ int main()
 {
     menu();
 }
+void gotoxy(int x, int y) {
+    HANDLE hcon = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD dwPos;
+    dwPos.X = x;
+    dwPos.Y = y;
+    SetConsoleCursorPosition(hcon, dwPos);
+}
 void menu() {
     int opcion;
     do {
-        system("cls");
-        cout << "----------------" << endl;
-        cout << "PROYECTO FINAL PROGRAMACION 1" << endl;
-        cout << " [111]  ACCEDER A LOS PUESTOS" << endl;
-        cout << " [2]  ACCEDER A LOS EMPLEADOS" << endl;
-        cout << " [3]  ACCEDER A LOS CLIENTES" << endl;
-        cout << " [4]  ACCEDER A LOS PROVEEDORES" << endl;
-        cout << " [5]  ACCEDER A LAS MARCAS" << endl;
-        cout << " [6]  ACCEDER A LOS PRODUCTOS" << endl;
-        cout << " [7]  ACCEDER A LAS VENTAS" << endl;
-        cout << " [8]  ACCEDER A LAS COMPRAS " << endl;
-        cout << " [9]  SALIR" << endl;
+        //system("Color B");//azul lineas
+         //system("Color 4F");//fondo rojo
+         //system("Color 5F");//fondo morado
+         //system("Color F0");//fondo blanco
+         //system("Color 80");//fondo gris
+        system("Color E");//amarillo lineas
+        gotoxy(19, 19); printf("%c", 201);//esquina superior izquierda
+        gotoxy(63, 19); printf("%c", 187);//esquina superior derecha
+        gotoxy(19, 42); printf("%c", 200);//esquina inferior izquierda
+        gotoxy(63, 42); printf("%c", 188);//esquina inferior derecha
+        for (int k = 20; k < 63; k++) {//dibujo de las lineas horizontales
+            gotoxy(k, 19); printf("%c", 205);
+            gotoxy(k, 42); printf("%c", 205);
+        }
+        for (int k = 20; k < 42; k++) {//dibujo de las lineas verticales
+            gotoxy(19, k); printf("%c", 186);
+            gotoxy(63, k); printf("%c", 186);
+        }
+        gotoxy(22, 22); cout << "  *-- PROYECTO FINAL PROGRAMACION I --*  ";
+        for (int k = 20; k < 63; k++) {//dibujo linea horizontal
+            gotoxy(k, 25); printf("%c", 205);
+        }
+        gotoxy(24, 26); cout << "          MENU DE OPCIONES         " << endl;
+        gotoxy(20, 27); cout << "===========================================";
+        gotoxy(22, 29); cout << "1. ACCEDER A LOS PUESTOS" << endl;
+        gotoxy(22, 30); cout << "2. ACCEDER A LOS EMPLEADOS" << endl;
+        gotoxy(22, 31); cout << "3. ACCEDER A LOS CLIENTES" << endl;
+        gotoxy(22, 32); cout << "4. ACCEDER A LOS PROVEEDORES" << endl;
+        gotoxy(22, 33); cout << "5. ACCEDER A LAS MARCAS" << endl;
+        gotoxy(22, 34); cout << "6. ACCEDER A LOS PRODUCTOS" << endl;
+        gotoxy(22, 35); cout << "7. ACCEDER A LAS VENTAS" << endl;
+        gotoxy(22, 36); cout << "8. ACCEDER A LAS COMPRAS " << endl;
+        gotoxy(22, 37); cout << "9. SALIR " << endl;
+        gotoxy(20, 39); cout << "===========================================" << endl;
+        gotoxy(24, 41); cout << "\t\tDigite su opcion: ";
         cin >> opcion;
+        gotoxy(24, 44); cout << "                                                     " << endl;
         switch (opcion) {
         case 1:
             puestos();
@@ -131,14 +162,17 @@ void puestos() {
     Puesto p = Puesto();
     do {
         system("cls");
-        cout << "TABLA DE REGISTRO DE PUESTOS" << endl;
-        cout << "QUE DESEA REALIZAR" << endl;
-        cout << "[1] INGRESAR REGISTROS" << endl;
-        cout << "[2] BUSCAR REGISTRO" << endl;
-        cout << "[3] MOSTRAR EL LISTADO" << endl;
-        cout << "[4] MODIFICAR UN REGISTRO" << endl;
-        cout << "[5] ELIMINAR UN REGISTRO" << endl;
-        cout << "[6] REGRESAR" << endl;
+        cout << "       \n\t\t TABLA DE REGISTRO DE PUESTOS       " << endl;
+        cout << "\t===========================================" << endl;
+        cout << "\t\tQUE DESEA REALIZAR" << endl;
+        cout << "\t\t1. INGRESAR REGISTROS" << endl;
+        cout << "\t\t2. BUSCAR REGISTRO" << endl;
+        cout << "\t\t3. MOSTRAR EL LISTADO" << endl;
+        cout << "\t\t4. MODIFICAR UN REGISTRO" << endl;
+        cout << "\t\t5. ELIMINAR UN REGISTRO" << endl;
+        cout << "\t\t6. REGRESAR" << endl;
+        cout << "\t===========================================" << endl;
+        cout << "\t\t\tDigite su opcion: ";
         cin >> opc;
         switch (opc) {
         case 1:
@@ -175,14 +209,17 @@ void empleados() {
     Empleado e = Empleado();
     do {
         system("cls");
-        cout << "TABLA DE REGISTRO DE EMPLEADOS" << endl;
-        cout << "QUE DESEA REALIZAR" << endl;
-        cout << "[1] INGRESAR REGISTROS" << endl;
-        cout << "[2] BUSCAR REGISTRO" << endl;
-        cout << "[3] MOSTRAR EL LISTADO" << endl;
-        cout << "[4] MODIFICAR UN REGISTRO" << endl;
-        cout << "[5] ELIMINAR UN REGISTRO" << endl;
-        cout << "[6] REGRESAR" << endl;
+        cout << "       \n\t\tTABLA DE REGISTRO DE EMPLEADOS       " << endl;
+        cout << "\t===========================================" << endl;
+        cout << "\t\tQUE DESEA REALIZAR" << endl;
+        cout << "\t\t1. INGRESAR REGISTROS" << endl;
+        cout << "\t\t2. BUSCAR REGISTRO" << endl;
+        cout << "\t\t3. MOSTRAR EL LISTADO" << endl;
+        cout << "\t\t4. MODIFICAR UN REGISTRO" << endl;
+        cout << "\t\t5. ELIMINAR UN REGISTRO" << endl;
+        cout << "\t\t6. REGRESAR" << endl;
+        cout << "\t===========================================" << endl;
+        cout << "\t\t\tDigite su opcion: ";
         cin >> opc;
         switch (opc) {
         case 1:
@@ -219,14 +256,17 @@ void clientes() {
     Cliente c = Cliente();
     do {
         system("cls");
-        cout << "TABLA DE REGISTRO DE CLIENTES" << endl;
-        cout << "QUE DESEA REALIZAR" << endl;
-        cout << "[1] INGRESAR REGISTROS" << endl;
-        cout << "[2] BUSCAR REGISTRO" << endl;
-        cout << "[3] MOSTRAR EL LISTADO" << endl;
-        cout << "[4] MODIFICAR UN REGISTRO" << endl;
-        cout << "[5] ELIMINAR UN REGISTRO" << endl;
-        cout << "[6] REGRESAR" << endl;
+        cout << "       \n\t\tTABLA DE REGISTRO DE CLIENTES" << endl;
+        cout << "\t===========================================" << endl;
+        cout << "\t\tQUE DESEA REALIZAR" << endl;
+        cout << "\t\t1. INGRESAR REGISTROS" << endl;
+        cout << "\t\t2. BUSCAR REGISTRO" << endl;
+        cout << "\t\t3. MOSTRAR EL LISTADO" << endl;
+        cout << "\t\t4. MODIFICAR UN REGISTRO" << endl;
+        cout << "\t\t5. ELIMINAR UN REGISTRO" << endl;
+        cout << "\t\t6. REGRESAR" << endl;
+        cout << "\t===========================================" << endl;
+        cout << "\t\t\tDigite su opcion: ";
         cin >> opc;
         switch (opc) {
         case 1:
@@ -271,14 +311,17 @@ void proveedores() {
     Proveedor pv = Proveedor();
     do {
         system("cls");
-        cout << "TABLA DE REGISTRO DE PROVEEDORES" << endl;
-        cout << "QUE DESEA REALIZAR" << endl;
-        cout << "[1] INGRESAR REGISTROS" << endl;
-        cout << "[2] BUSCAR REGISTRO" << endl;
-        cout << "[3] MOSTRAR EL LISTADO" << endl;
-        cout << "[4] MODIFICAR UN REGISTRO" << endl;
-        cout << "[5] ELIMINAR UN REGISTRO" << endl;
-        cout << "[6] REGRESAR" << endl;
+        cout << "\n\t\tTABLA DE REGISTRO DE PROVEEDORES" << endl;
+        cout << "\t===========================================" << endl;
+        cout << "\t\tQUE DESEA REALIZAR" << endl;
+        cout << "\t\t1. INGRESAR REGISTROS" << endl;
+        cout << "\t\t2. BUSCAR REGISTRO" << endl;
+        cout << "\t\t3. MOSTRAR EL LISTADO" << endl;
+        cout << "\t\t4. MODIFICAR UN REGISTRO" << endl;
+        cout << "\t\t5. ELIMINAR UN REGISTRO" << endl;
+        cout << "\t\t6. REGRESAR" << endl;
+        cout << "\t===========================================" << endl;
+        cout << "\t\t\tDigite su opcion: ";
         cin >> opc;
         switch (opc) {
         case 1:
@@ -314,14 +357,17 @@ void marcas() {
     Marca m = Marca();
     do {
         system("cls");
-        cout << "TABLA DE REGISTRO DE MARCAS" << endl;
-        cout << "QUE DESEA REALIZAR" << endl;
-        cout << "[1] INGRESAR REGISTROS" << endl;
-        cout << "[2] BUSCAR REGISTRO" << endl;
-        cout << "[3] MOSTRAR EL LISTADO" << endl;
-        cout << "[4] MODIFICAR UN REGISTRO" << endl;
-        cout << "[5] ELIMINAR UN REGISTRO" << endl;
-        cout << "[6] REGRESAR" << endl;
+        cout << "\n\t\tTABLA DE REGISTRO DE MARCAS" << endl;
+        cout << "\t===========================================" << endl;
+        cout << "\t\tQUE DESEA REALIZAR" << endl;
+        cout << "\t\t1. INGRESAR REGISTROS" << endl;
+        cout << "\t\t2. BUSCAR REGISTRO" << endl;
+        cout << "\t\t3. MOSTRAR EL LISTADO" << endl;
+        cout << "\t\t4. MODIFICAR UN REGISTRO" << endl;
+        cout << "\t\t5. ELIMINAR UN REGISTRO" << endl;
+        cout << "\t\t6. REGRESAR" << endl;
+        cout << "\t===========================================" << endl;
+        cout << "\t\t\tDigite su opcion: ";
         cin >> opc;
         switch (opc) {
         case 1:
@@ -357,14 +403,17 @@ void productos() {
     Producto pr = Producto();
     do {
         system("cls");
-        cout << "TABLA DE REGISTRO DE PRODUCTOS" << endl;
-        cout << "QUE DESEA REALIZAR" << endl;
-        cout << "[1] INGRESAR REGISTROS" << endl;
-        cout << "[2] BUSCAR REGISTRO" << endl;
-        cout << "[3] MOSTRAR EL LISTADO" << endl;
-        cout << "[4] MODIFICAR UN REGISTRO" << endl;
-        cout << "[5] ELIMINAR UN REGISTRO" << endl;
-        cout << "[6] REGRESAR" << endl;
+        cout << "\n\t\tTABLA DE REGISTRO DE PRODUCTOS" << endl;
+        cout << "\t===========================================" << endl;
+        cout << "\t\tQUE DESEA REALIZAR" << endl;
+        cout << "\t\t1. INGRESAR REGISTROS" << endl;
+        cout << "\t\t2. BUSCAR REGISTRO" << endl;
+        cout << "\t\t3. MOSTRAR EL LISTADO" << endl;
+        cout << "\t\t4. MODIFICAR UN REGISTRO" << endl;
+        cout << "\t\t5. ELIMINAR UN REGISTRO" << endl;
+        cout << "\t\t6. REGRESAR" << endl;
+        cout << "\t===========================================" << endl;
+        cout << "\t\t\tDigite su opcion: ";
         cin >> opc;
         switch (opc) {
         case 1:
@@ -399,14 +448,17 @@ void ventas() {
     int opc;
     do {
         system("cls");
-        cout << "TABLA DE REGISTRO DE VENTAS" << endl;
-        cout << "QUE DESEA REALIZAR" << endl;
-        cout << "[1] INGRESAR REGISTROS" << endl;
-        cout << "[2] BUSCAR REGISTRO" << endl;
-        cout << "[3] MOSTRAR EL LISTADO" << endl;
-        cout << "[4] MODIFICAR UN REGISTRO" << endl;
-        cout << "[5] ELIMINAR UN REGISTRO" << endl;
-        cout << "[6] REGRESAR" << endl;
+        cout << "\n\t\tTABLA DE REGISTRO DE VENTAS" << endl;
+        cout << "\t===========================================" << endl;
+        cout << "\t\tQUE DESEA REALIZAR" << endl;
+        cout << "\t\t1. INGRESAR REGISTROS" << endl;
+        cout << "\t\t2. BUSCAR REGISTRO" << endl;
+        cout << "\t\t3. MOSTRAR EL LISTADO" << endl;
+        cout << "\t\t4. MODIFICAR UN REGISTRO" << endl;
+        cout << "\t\t5. ELIMINAR UN REGISTRO" << endl;
+        cout << "\t\t6. REGRESAR" << endl;
+        cout << "\t===========================================" << endl;
+        cout << "\t\t\tDigite su opcion: ";
         cin >> opc;
         switch (opc) {
         case 1:
@@ -446,14 +498,17 @@ void compras() {
     Compra_Detalle cdt = Compra_Detalle();
     do {
         system("cls");
-        cout << "TABLA DE REGISTRO DE COMPRAS" << endl;
-        cout << "QUE DESEA REALIZAR" << endl;
-        cout << "[1] INGRESAR REGISTROS" << endl;
-        cout << "[2] BUSCAR REGISTRO" << endl;
-        cout << "[3] MOSTRAR EL LISTADO" << endl;
-        cout << "[4] MODIFICAR UN REGISTRO" << endl;
-        cout << "[5] ELIMINAR UN REGISTRO" << endl;
-        cout << "[6] REGRESAR" << endl;
+        cout << "\n\t\tTABLA DE REGISTRO DE COMPRAS" << endl;
+        cout << "\t===========================================" << endl;
+        cout << "\t\tQUE DESEA REALIZAR" << endl;
+        cout << "\t\t1. INGRESAR REGISTROS" << endl;
+        cout << "\t\t2. BUSCAR REGISTRO" << endl;
+        cout << "\t\t3. MOSTRAR EL LISTADO" << endl;
+        cout << "\t\t4. MODIFICAR UN REGISTRO" << endl;
+        cout << "\t\t5. ELIMINAR UN REGISTRO" << endl;
+        cout << "\t\t6. REGRESAR" << endl;
+        cout << "\t===========================================" << endl;
+        cout << "\t\t\tDigite su opcion: ";
         cin >> opc;
         switch (opc) {
         case 1:
